@@ -20,21 +20,22 @@ class ApplicationController < Sinatra::Base
   get'/artists/new' do
     erb :new_artist
   end
+  # /artists/<%= @artist.id %>/edit
+  get '/artists/:id/edit' do
+    @artist = Artist.find_by(id: params[:id])
+    erb :artist_edit
+  end
 
   get "/artists/:id" do
     @artist = Artist.find_by(id: params[:id])
     erb :artists
   end
 
-  get '/artists/:id/edit' do
-    erb :artists
-  end
 
-  put '/artists/:id' do
-    binding.pry
-    # @artist = Artist.find_by(id: params[:id])
-    # @artist.update
-    # redirect to "/artist/:id" make dynamic
+  patch '/artists/:id' do
+    @artist = Artist.find_by(id: params[:id])
+    @artist.update(params[:artist])
+    redirect to "/artists/#{@artist.id}"
   end
 
   delete '/artists/:id' do

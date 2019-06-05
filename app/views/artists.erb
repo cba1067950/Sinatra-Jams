@@ -9,7 +9,10 @@
   <input type="Submit" value="Obliterate Artist">
 </form>
 
-<!-- <form action="/artists/ @artist.id %>" method="post">
-  <input type="hidden" value="DELETE">
-  <input type="Submit" value="Obliterate Artist">
-</form> -->
+<form action="/artists/<%= @artist.id %>/edit" method="get">
+  <input type="Submit" value="Edit Artist">
+</form>
+
+<form action="/artists" method="get">
+  <input type="Submit" value="Main Page">
+</form>
