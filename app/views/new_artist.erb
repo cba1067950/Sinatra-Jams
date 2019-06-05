@@ -1,18 +1,4 @@
-<h1>Jams - An application for all your music needs!</h1>
-
-<h3>Display the names of all the artists</h3>
-
-<ul>
-  <% Artist.all.each do |artist| %>
-  <li> <a href="/artists/<%= artist.id %> "> <%= artist.name %></a> </li>
-  <% end %>
-</ul>
-
-<a href="'/artists/new'">Create new artist</a>
-
-
-
-<!-- <h3>Create a New Artist!</h3>
+<h3>Create a New Artist!</h3>
 
 <form action="/artists" method="post">
 
@@ -30,4 +16,4 @@
 
   <input type="submit" value="SUBMIT">
 
-</form> -->
+</form>
